@@ -2,8 +2,6 @@ import pytest
 from datetime import time
 
 
-
-
 def test_dark_theme_by_time():
     """
     Протестируйте правильность переключения темной темы на сайте в зависимости от времени
@@ -46,6 +44,7 @@ def test_dark_theme_by_time_and_user_choice():
     assert is_dark_theme is True
 
 
+
 def test_find_suitable_user():
     """
     Найдите нужного пользователя по условиям в списке пользователей
@@ -67,8 +66,6 @@ def test_find_suitable_user():
             if value == "Olga":
                 suitable_users = user
 
-
-
     assert suitable_users == {"name": "Olga", "age": 45}
 
     # TODO найдите всех пользователей младше 20 лет
@@ -77,8 +74,6 @@ def test_find_suitable_user():
     for user in users:
         if user['age'] < 20:
             suitable_users.append(user)
-
-
 
     assert suitable_users == [
         {"name": "Stanislav", "age": 15},
@@ -104,7 +99,6 @@ def readable_function(func, *args):
     return (f'{example_func_name} [{example_args}]')
 
 
-
 def test_readable_function():
     open_browser(browser_name="Chrome")
     go_to_companyname_homepage(page_url="https://companyname.com")
@@ -127,5 +121,3 @@ def find_registration_button_on_login_page(page_url, button_text):
     actual_result = None
     actual_result = readable_function(find_registration_button_on_login_page, page_url, button_text)
     assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
-
-
